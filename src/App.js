@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { createTheme, ThemeProvider } from "@mui/material";
+import Filters from "./components/Filters";
+import JobList from "./components/JobList";
+import { Box } from "@mui/material";
+import "./App.css";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Poppins", "sans-serif"].join(","),
+  },
+});
 
 function App() {
+  const [filters, setFilters] = useState({
+    role: [],
+    experience: [],
+    remote: [],
+    salary: null,
+    location: [],
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Box display="flex" justifyContent="center" sx={{ p: 7 }}>
+          <Filters filters={filters} setFilters={setFilters} />
+        </Box>
+        <JobList filters={filters} />
+      </div>
+    </ThemeProvider>
   );
 }
 
