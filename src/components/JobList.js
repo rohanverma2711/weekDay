@@ -46,7 +46,7 @@ const JobList = ({ filters }) => {
     setOffset(offset + 10);
   };
 
-  // Filter jobs based on selected filters
+// Filter jobs based on selected filters
   const filteredJobs = jobs.filter((job) => {
     return (
       // Role filter
