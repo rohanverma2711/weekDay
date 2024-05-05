@@ -10,17 +10,9 @@ import {
 import ApplyButton from "./ApplyButton";
 import ReferralButton from "./ReferralButton";
 import Stack from "@mui/material/Stack";
-import JobModal from "./JobModal";
 
 const JobCard = ({ job }) => {
-  const [openModal, setOpenModal] = useState(false);
 
-  const handleModalOpen = () => {
-    setOpenModal(true);
-  };
-  const handleModalClose = () => {
-    setOpenModal(false);
-  };
 
   return (
     <Card
@@ -143,7 +135,7 @@ const JobCard = ({ job }) => {
         </div>
         {job.jobDetailsFromCompany.length > 400 && (
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button size="small" onClick={handleModalOpen} sx={{ padding: 0 }}>
+            <Button size="small"  sx={{ padding: 0 }}>
               View job
             </Button>
           </div>
@@ -161,7 +153,6 @@ const JobCard = ({ job }) => {
           <ReferralButton jdLink={job.jdLink} />
         </Stack>
       </CardActions>
-      <JobModal job={job} open={openModal} handleClose={handleModalClose} />
     </Card>
   );
 };
