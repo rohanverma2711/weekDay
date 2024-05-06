@@ -23,10 +23,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Box display="flex" justifyContent="center" sx={{ p: 7 }}>
+        <Box display="flex" justifyContent="center" sx={{ py: 4,px:8}}>
           <Filters filters={filters} setFilters={setFilters} />
         </Box>
-        <JobList filters={filters} />
+        <JobList filters={filters}  />
       </div>
     </ThemeProvider>
   );

@@ -176,7 +176,7 @@ const Filters = ({ filters, setFilters }) => {
           options={remote}
           isMulti
           isClearable
-          placeholder="Remote/Onsite"
+          placeholder="Remote"
         />
       </Grid>
       <Grid item xs={12} sm={6} md={2}>
@@ -184,7 +184,7 @@ const Filters = ({ filters, setFilters }) => {
           onChange={handleSalaryChange}
           options={salary}
           isClearable
-          placeholder="Minimum Salary"
+          placeholder="Minimum Base Salary"
         />
       </Grid>
       <Grid item xs={12} sm={6} md={2}>
